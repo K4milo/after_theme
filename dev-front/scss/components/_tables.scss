@@ -1,0 +1,45 @@
+table {
+	color: $blue;
+	thead {
+		border: rem(1px) solid $blue;
+		background-color: $blue;
+		padding: rem(8px);
+		@include mq('md') {
+			padding: rem(12px);
+		}
+		tr {			
+			td {				
+				font-family: $bd;
+				h3 {
+					text-align: center;
+					margin: 0;
+					@include font(12px);
+					@include mq('md') {
+						@include font(22px);
+					}
+				}
+			}
+		}
+
+	}
+	
+	&#sizes-man {
+		thead {
+			background-color: $blue-lt;
+		}		
+	}
+
+	tbody {
+		tr {
+			td {
+				border: rem(1px) solid $blue;				
+				@include font(11px);
+				padding: rem(6px);
+				@include mq('md') {
+					padding: rem(12px);
+					@include font(16px);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+body {
+	&.page-id-336 {
+		.site-content {
+			color: $blue;
+			h2,h3 {
+				font-family: $bd;
+			}
+			a,
+			h3 {
+				color: $blue-dk;
+			}
+			.entry-header{
+				margin-bottom: rem(30px);
+			}
+		}
+	}
+}

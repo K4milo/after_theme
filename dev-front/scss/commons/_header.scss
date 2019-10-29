@@ -1,0 +1,210 @@
+.site-header {
+	padding: 0 0;
+	.navbar {
+		position: relative;
+		margin: 0 0 0 0;
+		border-radius: 0;
+		border: none;
+		background-color: $blue;
+		height: auto;
+		transition: all 0.5s;
+		
+		// Scrolled menu styles
+		&.scroll_menu {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: $blue;	
+			z-index: 999;
+			// Stycky logo
+			.navbar-brand {
+				h1 {
+					margin: rem(5px) 0;
+					transition: all 0.3s;
+					@include iconBg('../images/brand/logo-white.svg');
+				}
+			}
+			.navbar {
+				&-collapse {
+					ul {
+						&.navbar-nav {
+							> li {
+								> a {
+									color: $blue;
+								}
+							}
+						}
+					}	
+				}
+			}
+		}
+
+		// Button
+		&-toggle {
+			float: none;
+			border: none;
+			@include mq('sm') {
+				display: none;
+			}
+			span {
+				&.icon-bar {
+					background-color: $blue;
+					height: rem(3px);
+				}
+			}
+		}
+
+		// desktop layout fix
+		.row-header {
+			@include wrapper;
+			@include mq('sm') {				
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0 rem(35px);
+			}
+		}
+
+		&-header {
+			width: 100%;
+			float: none;
+			display: flex;
+			flex-direction: row-reverse;
+			@include mq('sm') {
+				display: block;
+				width: auto;
+			}	
+		}
+
+		&-brand {
+			float: none;
+			padding: 0 0;
+			margin: 0 0;
+			height: auto;
+			font-size: 0;
+			flex-grow: 2;
+			@include mq('sm') {
+				margin-left: 0 !important;
+			}
+			h1 {
+				padding: 0 0;
+				margin: rem(10px) 0;
+				font-size: 0;
+				width: rem(120px);
+				height: rem(70px);
+				@include iconBg('../images/brand/logo.svg');
+				@include mq('md') {					
+					width: rem(118px);
+					height: rem(90px);
+				}
+			}
+		}
+
+		&-collapse {
+			float: none;
+			padding: rem(16px) rem(20px) rem(30px);
+			@include mq('sm') {
+				padding: initial;
+				display: inherit !important;
+				> div {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+			// Menu
+			ul {
+				&.navbar-nav {
+					@include mq('sm') {
+						float: none;
+						margin: inherit;
+					}
+					> li {
+						@include mq('sm') {
+							display: inline-block;
+						}
+						> a {
+							color: $white;
+							@include font(18px);
+							&:hover,
+							&:focus {
+								background-color: transparent;
+							}
+						}
+						&.active {				
+							a {
+								color: $blue;
+								background-color: transparent;
+							}					
+						}
+						&:hover {
+							.dropdown-menu {
+								@include mq('sm') {
+									display: block;
+								}
+							}
+						}
+						.dropdown-menu {
+							padding: 0 0;
+							margin: 0 0;
+							li {
+								background-color: $blue;
+								a {
+									padding: rem(16px);
+								}
+								&.active {
+									a {
+										background-color: $blue-dk;
+										color: $white;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Social menu
+.menu-social {
+	max-height: rem(40px);
+	&--social {
+		text-align: center;
+		padding: 0 0;
+		margin: 0 0;
+		@include mq('sm') {
+			margin: 0 0 0 rem(80px);
+			margin-top: rem(7px);
+		}
+		li {
+			display: inline-block;
+			vertical-align: middle;
+			margin: rem(12px) rem(5px);
+			@include mq('sm') {
+				margin: 0 rem(5px);
+			}
+			a {
+				display: block;
+				width: rem(35px);
+				height: rem(35px);
+				background-color: $blue;
+				border-radius: 100%;
+				&:hover {
+					background-color: $blue-lt;
+				}
+			}
+			&.fb {
+				a {
+					@include iconBg('../images/icons/facebook.svg', 55%);
+				}				
+			}
+			&.ins {
+				a {
+					@include iconBg('../images/icons/instagram.svg', 55%);
+				}				
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+body {
+	.storefront-sorting {
+		@include wrapper;
+		
+		.woocommerce-ordering {
+			@include font(16px);
+			color: $blue;
+			select {
+				padding: rem(12px);
+				border: rem(2px) solid $gray;
+			}
+			&::after {
+				color: $blue;
+			}
+		}
+		p {
+			&.woocommerce-result-count {
+				@include font(16px);
+				@include mq('md') {
+					margin-top: rem(12px);
+					color: $blue;
+				}
+			}
+		}
+
+		.woocommerce-pagination {
+			.page-numbers {
+				li {
+					span {
+						&.current {
+							background-color: $blue;
+							color: $white;
+							font-family: $bd;
+						}
+					}
+					a {
+						background-color: rgba($blue,0.5);
+						color: $blue;
+						border: none;
+					}
+				}
+			}
+		}
+	}
+}

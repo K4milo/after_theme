@@ -1,0 +1,14 @@
+body {
+	.ig_messenger {
+		&.ig_social {
+			.ig_headline {
+				padding: rem(5px) rem(18px);
+				background-color: $blue-dk;
+				height: auto;
+				border: none;
+				font-family: $bd;
+				@include font(16px);
+			}
+		}
+	}	
+}
