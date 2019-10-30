@@ -1,0 +1,67 @@
+body {
+	&.storefront-full-width-content {
+		.site-main {
+			ul {
+				&.products {
+					&.columns-3 {
+						@include wrapper;
+						padding-right: 0;
+						display: flex;
+						flex-wrap: wrap;
+						justify-content: space-between;
+						@include mq('md') {
+							flex-direction: row;
+							justify-content: flex-start;
+						}
+						li {
+							&.product {
+								float: none;
+								width: 47%;
+								margin: rem(16px) 0;
+								padding: rem(16px);
+								border: rem(1px) solid $gray-lt;
+								transition: all 0.32s;
+								text-align: center;
+								justify-content: center;
+								@include mq('md') {
+									margin: rem(16px);
+									width: 32%;
+									display: inline-flex;
+									margin-left: 0;
+									&:hover {
+										box-shadow: 0 0 rem(12px) $gray;
+									}
+								}
+								a {									
+									&.ajax_add_to_cart {
+										float: none;
+										background-color: $blue;
+										color: $white;
+										border-radius: 0 0;
+									}
+									&:hover{
+										text-decoration: none;
+									}
+								}
+								.woocommerce-loop-product {
+									&__title {
+										@include font(20px);
+										color: $blue-dk;
+										font-family: $bd;
+									}
+								}
+								.woocommerce-Price-amount {
+									&.amount {
+										color: $blue;
+										font-family: $bd;
+										@include font(18px);	
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

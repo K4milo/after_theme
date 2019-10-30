@@ -15,14 +15,14 @@
 			top: 0;
 			left: 0;
 			width: 100%;
-			background-color: $blue;	
+			background-color: $white;	
 			z-index: 999;
 			// Stycky logo
 			.navbar-brand {
 				h1 {
 					margin: rem(5px) 0;
 					transition: all 0.3s;
-					@include iconBg('../images/brand/logo-white.svg');
+					@include iconBg('../images/brand/logo.svg');
 				}
 			}
 			.navbar {
@@ -49,7 +49,7 @@
 			}
 			span {
 				&.icon-bar {
-					background-color: $blue;
+					background-color: $white;
 					height: rem(3px);
 				}
 			}
@@ -93,7 +93,7 @@
 				font-size: 0;
 				width: rem(120px);
 				height: rem(70px);
-				@include iconBg('../images/brand/logo.svg');
+				@include iconBg('../images/brand/logo-white.svg');
 				@include mq('md') {					
 					width: rem(118px);
 					height: rem(90px);
@@ -132,8 +132,7 @@
 							}
 						}
 						&.active {				
-							a {
-								color: $blue;
+							a {								
 								background-color: transparent;
 							}					
 						}

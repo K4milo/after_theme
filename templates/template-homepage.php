@@ -1,5 +1,5 @@
 <?php
-/* Template name: Homepage Lilibuy */
+/* Template name: Homepage After shoes*/
 
 get_header(); 
 
