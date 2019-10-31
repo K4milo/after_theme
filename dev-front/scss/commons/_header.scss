@@ -14,6 +14,7 @@
 			position: fixed;
 			top: 0;
 			left: 0;
+			box-shadow: 0 0 rem(12px) $blue-dk;
 			width: 100%;
 			background-color: $white;	
 			z-index: 999;
@@ -31,7 +32,16 @@
 						&.navbar-nav {
 							> li {
 								> a {
-									color: $blue;
+									color: $blue-dk;
+								}
+							}
+						}
+						// cart
+						&.site-header-cart {							
+							@include mq('sm') {
+								color: $blue-dk;
+								a {
+									color: $blue-dk;
 								}
 							}
 						}
@@ -105,6 +115,7 @@
 			float: none;
 			padding: rem(16px) rem(20px) rem(30px);
 			@include mq('sm') {
+				min-width: 80%;
 				padding: initial;
 				display: inherit !important;
 				> div {
@@ -128,6 +139,7 @@
 							@include font(18px);
 							&:hover,
 							&:focus {
+								color: $white;
 								background-color: transparent;
 							}
 						}
@@ -137,6 +149,7 @@
 							}					
 						}
 						&:hover {
+							color: $white;
 							.dropdown-menu {
 								@include mq('sm') {
 									display: block;
@@ -147,17 +160,115 @@
 							padding: 0 0;
 							margin: 0 0;
 							li {
+								display: block;
+								width: 100%;
 								background-color: $blue;
+								color: $white;
+								float: none;
+								img {
+									float: none;
+								}
 								a {
+									float:none;
+									color: $white;
 									padding: rem(16px);
+									&:hover {
+										color: $blue-dk;
+									}
 								}
 								&.active {
 									a {
 										background-color: $blue-dk;
 										color: $white;
 									}
+								}								
+							}
+						}
+
+						// Shop mega menu
+						&.shop-menu {
+							&:hover {
+								.dropdown-menu {
+									@include mq('sm') {
+										min-width: rem(500px);
+										display: flex;
+										flex-wrap: wrap;
+									}
 								}
 							}
+							.dropdown-menu {
+								background-color: $white;
+								float: none;
+								border: none;
+								box-shadow: none;
+								li {
+									background-color: $white;
+									@include mq('sm') {
+										text-align: center;
+										width: 33.3%
+									}
+									&.menu {
+										&__balets,
+										&__bags,
+										&__ecobags {
+											a {
+												display: flex;
+												flex-wrap: wrap;
+												align-items: center;
+												@include mq('sm') {
+													display: block;
+												}
+												img{
+													width: 35%;
+													height: auto;
+													@include mq('sm') {
+														margin: 0 auto rem(5px);
+														max-width: 100%;
+														width: auto;
+														display: block;
+													}
+												}
+												span {
+													width: 60%;
+													color: $blue-dk;
+													@include mq('sm') {
+														padding: 0 0;
+														display: block;
+														text-align: center;
+														width: 100%;
+													}													
+												}
+												&:hover {
+													background-color: $blue-dk;
+													span {
+														color: $white;
+													}
+												}
+											}		
+										}
+									}									
+								}
+							}
+						}
+					}
+				}
+
+				// cart
+				&.site-header-cart {
+					float: none;
+					width: 100%;
+					@include mq('sm') {
+						display: inline-block;
+						vertical-align: middle;
+						width: 30%;
+						color: $white;
+						a {
+							color: $white;
+						}
+					}
+					.cart-contents {
+						@include mq('sm') {
+							padding: 0 rem(16px) rem(10px);
 						}
 					}
 				}
@@ -188,7 +299,7 @@
 				display: block;
 				width: rem(35px);
 				height: rem(35px);
-				background-color: $blue;
+				background-color: $blue-dk;
 				border-radius: 100%;
 				&:hover {
 					background-color: $blue-lt;

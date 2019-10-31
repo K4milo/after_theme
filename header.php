@@ -59,6 +59,9 @@
 		        	    );
 		        	?> 
 		        </div>
+		        <?php
+		        	do_action('header_hooks');
+		        ?>
 		      </div><!-- /.navbar-collapse -->
 		    </div>
 		  </div><!-- /.container -->
