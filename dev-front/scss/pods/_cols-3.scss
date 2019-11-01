@@ -37,9 +37,14 @@ body {
 										float: none;
 										background-color: $blue;
 										color: $white;
+										font-family: $bd;
+										text-transform: uppercase;
 										border-radius: 0 0;
+										&:hover{
+											background-color: $yellow;
+										}
 									}
-									&:hover{
+									&:hover {
 										text-decoration: none;
 									}
 								}

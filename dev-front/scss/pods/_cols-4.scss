@@ -30,8 +30,19 @@ body {
 										box-shadow: 0 0 rem(12px) $gray;
 									}
 								}
-								a {
-									&:hover{
+								a {									
+									&.ajax_add_to_cart {
+										float: none;
+										background-color: $blue;
+										color: $white;
+										font-family: $bd;
+										text-transform: uppercase;
+										border-radius: 0 0;
+										&:hover{
+											background-color: $yellow;
+										}
+									}
+									&:hover {
 										text-decoration: none;
 									}
 								}

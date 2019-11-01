@@ -1,5 +1,7 @@
 .site-header {
 	padding: 0 0;
+	border: none;
+	border-bottom: rem(4px) solid $yellow;
 	.navbar {
 		position: relative;
 		margin: 0 0 0 0;
@@ -26,7 +28,7 @@
 					@include iconBg('../images/brand/logo.svg');
 				}
 			}
-			.navbar {
+			.navbar {				
 				&-collapse {
 					ul {
 						&.navbar-nav {
@@ -82,8 +84,9 @@
 			display: flex;
 			flex-direction: row-reverse;
 			@include mq('sm') {
-				display: block;
-				width: auto;
+				flex-direction: initial;
+				flex-wrap: wrap;
+				justify-content: space-between;
 			}	
 		}
 
@@ -117,18 +120,17 @@
 			@include mq('sm') {
 				min-width: 80%;
 				padding: initial;
-				display: inherit !important;
-				> div {
-					display: inline-block;
-					vertical-align: middle;
-				}
+				display: flex !important;
+				flex-wrap: wrap;
+				justify-content: flex-end;
+				align-items: center;
 			}
 			// Menu
 			ul {
 				&.navbar-nav {
 					@include mq('sm') {
 						float: none;
-						margin: inherit;
+						margin: 0 rem(45px);
 					}
 					> li {
 						@include mq('sm') {
@@ -173,7 +175,7 @@
 									color: $white;
 									padding: rem(16px);
 									&:hover {
-										color: $blue-dk;
+										color: $yellow;
 									}
 								}
 								&.active {
@@ -239,7 +241,14 @@
 													}													
 												}
 												&:hover {
-													background-color: $blue-dk;
+													background-color: $yellow;
+													span {
+														color: $blue;
+													}
+												}
+											}
+											&.active {
+												a {
 													span {
 														color: $white;
 													}
@@ -258,17 +267,43 @@
 					float: none;
 					width: 100%;
 					@include mq('sm') {
-						display: inline-block;
-						vertical-align: middle;
-						width: 30%;
+						width: 15%;
 						color: $white;
 						a {
 							color: $white;
 						}
 					}
 					.cart-contents {
+						.amount {
+							display: none;
+						}
 						@include mq('sm') {
 							padding: 0 rem(16px) rem(10px);
+						}
+					}
+					&:hover {
+						.widget {
+							&.widget_shopping_cart {
+								display: block;
+							}
+						}
+					}
+
+					// Cart block;
+					.widget {						
+						&.widget_shopping_cart {
+							display: none;
+							left: rem(-45px);
+							min-width: rem(250px);
+							a {
+								color: $blue;
+							}
+						}
+						.woocommerce-mini-cart__buttons {
+							.wc-forward {
+								background-color: $blue;
+								color: $white;
+							}
 						}
 					}
 				}
@@ -284,10 +319,6 @@
 		text-align: center;
 		padding: 0 0;
 		margin: 0 0;
-		@include mq('sm') {
-			margin: 0 0 0 rem(80px);
-			margin-top: rem(7px);
-		}
 		li {
 			display: inline-block;
 			vertical-align: middle;
@@ -302,7 +333,7 @@
 				background-color: $blue-dk;
 				border-radius: 100%;
 				&:hover {
-					background-color: $blue-lt;
+					background-color: $yellow;
 				}
 			}
 			&.fb {

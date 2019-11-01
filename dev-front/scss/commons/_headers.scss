@@ -17,7 +17,7 @@ body {
 						content: "";
 						width: rem(120px);
 						height: rem(5px);
-						background-color: $blue;
+						background-color: $yellow;
 						@include center('horizontal');
 						bottom: 0;
 					}
@@ -28,8 +28,8 @@ body {
 			&.woocommerce-products-header {
 				text-align: center;
 				position: relative;
-				padding-bottom: rem(16px);
-				margin-bottom: rem(18px);
+				padding-bottom: rem(16px) !important;
+				margin-bottom: rem(18px) !important;
 				h1 {					
 					color: $blue;
 					font-family: $bd;
@@ -44,26 +44,6 @@ body {
 					background-color: $blue;
 					@include center('horizontal');
 					bottom: 0;
-				}
-			}
-		}
-	}
-	&.term-hombre {
-		header {
-			&.site-main {
-				&__header {
-					
-					&::after {
-						background-color: $blue;
-					}
-				}
-			}
-
-			&.entry-header,
-			&.woocommerce-products-header {
-				
-				&::after {
-					background-color: $blue;
 				}
 			}
 		}
