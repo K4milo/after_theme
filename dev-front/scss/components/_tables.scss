@@ -1,5 +1,19 @@
 table {
 	color: $blue;
+	&:not( .has-background ) {
+		thead {
+			tr {			
+				th {
+					background-color: $blue;
+					border-color: $blue-dk;		
+					font-family: $bd;
+					color: $white;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+
 	thead {
 		border: rem(1px) solid $blue;
 		background-color: $blue;
@@ -8,8 +22,11 @@ table {
 			padding: rem(12px);
 		}
 		tr {			
-			td {				
+			th {
+				background-color: $blue;			
 				font-family: $bd;
+				color: $white;
+				text-transform: uppercase;
 				h3 {
 					text-align: center;
 					margin: 0;
@@ -32,12 +49,32 @@ table {
 	tbody {
 		tr {
 			td {
-				border: rem(1px) solid $blue;				
+				border: rem(1px) solid $gray-lt;				
 				@include font(11px);
 				padding: rem(6px);
 				@include mq('md') {
 					padding: rem(12px);
 					@include font(16px);
+				}
+			}
+		}
+	}
+
+	//  -- cart table -- //
+	&.cart {
+		tbody {
+			tr {
+				td {
+					text-align: center;
+					vertical-align: middle;
+					&.product-thumbnail {
+						img {
+							max-width: 80%;
+							@include mq('md') {
+								max-width: 54%;
+							}
+						}
+					}
 				}
 			}
 		}

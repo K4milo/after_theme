@@ -1,0 +1,55 @@
+.contact {
+	&__form {
+		h3 {
+			text-align: center;
+		}		
+		.form-contact {
+			form {
+				@include wrapper;
+				margin: rem(20px) auto;
+				padding: rem(20px);
+				max-width: rem(720px);
+				background-color: $gray-lt;
+				.wpforms {
+					&-submit-container {
+						padding: rem(20px) 0;
+						text-align: center;						
+						button {
+							@include button();
+							display: block;
+							@include mq(md) {
+								display: inline-block;		
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&__whatsapp {
+		text-align: center;
+		@include wrapper;
+		border-radius: rem(12px);
+		margin: rem(30px) auto;
+		padding: rem(20px);
+		max-width: rem(720px);
+		background-color: #6dd471;
+		color: $white;
+		a {
+			color: $white;
+			display: inline-block;
+			vertical-align: middle;
+			&::before {
+				content: "";
+				background-color: #46a24a;
+				border-radius: 100%;
+				margin-right: rem(5px);
+				width: rem(35px);
+				height: rem(35px);
+				display: inline-block;
+				vertical-align: middle;
+				@include iconBg('../images/icons/whatsapp.svg', 55%);
+			}
+		}
+	}
+}

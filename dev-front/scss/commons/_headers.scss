@@ -6,7 +6,7 @@ body {
 					text-align: center;
 					position: relative;
 					padding-bottom: rem(16px);
-					margin-bottom: rem(18px);
+					margin-bottom: rem(28px);
 					h2 {
 						color: $blue;
 						font-family: $bd;
@@ -29,7 +29,7 @@ body {
 				text-align: center;
 				position: relative;
 				padding-bottom: rem(16px) !important;
-				margin-bottom: rem(18px) !important;
+				margin-bottom: rem(48px) !important;
 				h1 {					
 					color: $blue;
 					font-family: $bd;
@@ -41,7 +41,7 @@ body {
 					content: "";
 					width: rem(120px);
 					height: rem(5px);
-					background-color: $blue;
+					background-color: $yellow;
 					@include center('horizontal');
 					bottom: 0;
 				}

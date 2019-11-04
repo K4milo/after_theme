@@ -38,8 +38,16 @@
 								}
 							}
 						}
-						// cart
-						&.site-header-cart {							
+						// cart							
+						&.site-header-cart {
+							.cart-contents {
+								.count {
+									color: $blue;
+								}
+								&::after {
+									color: $blue;
+								}
+							}						
 							@include mq('sm') {
 								color: $blue-dk;
 								a {
@@ -202,7 +210,7 @@
 								background-color: $white;
 								float: none;
 								border: none;
-								box-shadow: none;
+								box-shadow: 0 0 rem(12px) $gray;
 								li {
 									background-color: $white;
 									@include mq('sm') {
@@ -274,9 +282,18 @@
 						}
 					}
 					.cart-contents {
+						&::after {
+							color: $white;
+						}
+						.count {
+							color: $white;
+							opacity: 1;
+						}
+
 						.amount {
 							display: none;
 						}
+
 						@include mq('sm') {
 							padding: 0 rem(16px) rem(10px);
 						}
@@ -344,6 +361,11 @@
 			&.ins {
 				a {
 					@include iconBg('../images/icons/instagram.svg', 55%);
+				}				
+			}
+			&.wht {
+				a {
+					@include iconBg('../images/icons/whatsapp.svg', 55%);
 				}				
 			}
 		}

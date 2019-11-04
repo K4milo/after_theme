@@ -69,27 +69,57 @@ body {
 										@include font(45px);
 									}
 								}
+								h3 {
+									color: $blue;
+									font-family: $bd;
+									@include mq('md') {
+										@include font(25px);
+									}
+								}
+								
+								.woocommerce-product-details__short-description{
+									p {
+										@include mq('md') {
+											text-align: justify;
+										}
+									}
+								}
+
 								p {
 									&.price {
 										font-family: $bd;
-										color: $blue-dk;
+										color: $yellow;
 										@include font(30px);	
 										margin: rem(12px) 0;
 									}
 								}
-
-								.btn {
-									&.btn-buy {
-										display: inline-block;
-										border-radius: 0;
-										margin-top: rem(16px);
-										background-color: $blue-dk;
-										color: $white;
-										font-family: $bd;
-										text-transform: uppercase;
-										@include font(18px);
-										&:hover {
-											background-color: $blue;
+								
+								// Add to cart
+								form {
+									.single_add_to_cart_button {
+										@include button();
+									}
+								}
+								
+								// Sizes table
+								table {
+									thead {
+										border: none;
+										tr {
+											border: none;
+											th {
+												background-color: $yellow;
+												border-color: rgba($black, 0.35);
+												padding: rem(6px);
+												text-align: center;
+											}
+										}
+									}
+									tbody {
+										tr{
+											td {
+												text-align: center;
+											}
 										}
 									}
 								}
@@ -103,7 +133,14 @@ body {
 						// Product Tabs
 						.woocommerce-tabs {
 							&.wc-tabs-wrapper {
-								display: none;
+								width: 100%;
+								border-top: solid rem(2px) $gray-lt;
+								@include wrapper;
+								margin: rem(20px) auto;
+								padding: rem(16px) 0;
+								h2 {
+									display: none;
+								}
 							}
 						}
 

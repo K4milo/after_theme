@@ -1,27 +1,123 @@
-.footer {
-	text-align: center;
-	background-color: $blue;
-	color: $blue;
-	padding: rem(20px) 0 0;
+// Prefooter
+.site-pre-footer {
+	
 	&-row {
-		.nav_menu-2 {
-			h4 {
-				display: none;
+		@include mq(md) {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}		
+	}
+	
+	// Widgets
+	&-widgets__item {
+		width: 100%;
+
+		// Form
+		&.wpforms-widget {
+			background-color: $gray-dk;
+			color: $white;
+			.wpforms-container {
+				@include wrapper;	
+				.wpforms {
+					&-form {
+						margin: 0 0;
+						padding: rem(20px) rem(12px);
+						@include mq(md) {
+							padding: rem(20px) 0;
+							display: flex;
+							flex-wrap: wrap;
+							align-items: center;
+						}
+					}
+					
+					&-title {
+						margin: 0 0;
+					}
+
+					&-head-container {
+						@include font(24px);
+						font-family: $bd;
+						text-align: center;
+						@include mq(md) {
+							text-align: left;
+							width: 30%;
+						}
+					}
+
+					&-field-container {
+						@include mq(md) {
+							width: 55%;
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: space-between;
+						}
+						.form-item {
+							padding: rem(20px) 0;
+							@include mq(md) {
+								padding: 0 0;
+								width: 48%;
+							}
+							input {
+								max-width: 100%;
+							}
+						}
+					}
+
+					&-submit-container {
+						padding: rem(20px) 0;
+						@include mq(md) {
+							padding: 0 0;
+							width: 15%;
+							text-align: center;
+						}
+						button {
+							@include button();
+						}
+					}
+				}
 			}
-			ul {
+		}
+
+		// Social network
+		&.nav_menu-2 {
+			padding: rem(20px);
+			text-align: center;
+			@include mq('sm') {
 				padding: rem(10px) 0;
-				margin-bottom: rem(16px);
+			}
+			h4 {					
+				color: $blue;
+				font-family: $bd;
+				text-transform: uppercase;
+				padding: 0 0 rem(20px); 
+				position: relative;
+				@include font(20px);
+				&::after {
+					content: "";
+					width: rem(90px);
+					height: rem(5px);
+					background-color: $yellow;
+					@include center('horizontal');
+					bottom: 0;
+				}
+			}
+		
+			ul {
+				padding: 0 0;
+				display: block;
+				text-align: center;
+				margin: rem(30px) 0;
 				li {
 					display: inline-block;
 					vertical-align: middle;
 					margin: rem(12px) rem(5px);
 					padding: 0 0;
-					&::before,
-					&::after {
-						display: none;
-					}
 					@include mq('sm') {
 						margin: 0 rem(5px);
+					}
+					&::before {
+						display: none;
 					}
 					a {
 						display: block;
@@ -30,7 +126,7 @@
 						background-color: $blue;
 						border-radius: 100%;
 						&:hover {
-							background-color: $blue-dk;
+							background-color: $yellow;
 						}
 					}
 					&.fb {
@@ -43,30 +139,40 @@
 							@include iconBg('../images/icons/instagram.svg', 55%);
 						}				
 					}
+					&.wht {
+						a {
+							@include iconBg('../images/icons/whatsapp.svg', 55%);
+						}				
+					}
 				}
 			}
 		}
 	}
+}
+
+
+// Main Footer
+.footer {
+	text-align: center;
+	background-color: $white;
+	color: $blue;
+	padding: 0 0;
+	&-row {
+		padding: rem(10px) 0;
+		text-align: center;
+		img {
+			max-width: 100%;
+			display: inline-block;
+		}
+	}
 
 	&-copyright {
-		background-color: $blue-dk;
+		background-color: $blue;
 		padding: rem(10px);
 		a,
 		p {
+			@include font(13px);
 			color: $white;
-		}
-	}
-}
-
-body {
-	// Man catalog
-	&.term-hombre {
-		.footer {
-			background-color: $blue-lt;
-
-			&-copyright {
-				background-color: $blue;
-			}
 		}
 	}
 }

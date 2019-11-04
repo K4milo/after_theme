@@ -14,6 +14,11 @@
 
 	<?php do_action( 'storefront_before_footer' ); ?>
 
+	<div class="site-pre-footer">
+		<div class="site-pre-footer-row">
+			<?php dynamic_sidebar('pre-footer-widget-area'); ?>
+		</div>
+	</div>
 	<footer id="colophon" class="site-footer footer" role="contentinfo">
 		<div class="footer-row container">
 			<?php dynamic_sidebar('footer-widget-area'); ?>

@@ -19,6 +19,19 @@ function bst_widgets_init() {
   Footer (three widget areas)
    */
   register_sidebar( array(
+    'name'            => __( 'Pre Footer', 'bst' ),
+    'id'              => 'pre-footer-widget-area',
+    'description'     => __( 'The pre footer widget area', 'bst' ),
+    'before_widget'   => '<div class="%1$s %2$s site-pre-footer-widgets__item">',
+    'after_widget'    => '</div>',
+    'before_title'    => '<h4>',
+    'after_title'     => '</h4>',
+  ) );
+
+  /*
+  Footer (three widget areas)
+   */
+  register_sidebar( array(
     'name'            => __( 'Footer', 'bst' ),
     'id'              => 'footer-widget-area',
     'description'     => __( 'The footer widget area', 'bst' ),

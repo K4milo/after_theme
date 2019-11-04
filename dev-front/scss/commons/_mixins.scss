@@ -203,3 +203,19 @@ $browser-context: 16; // Default
   max-width: 1242px;
   margin: 0 auto;
 }
+
+@mixin button($color:white,$bgcolor:$yellow,$size:rem(16px)){
+  border: none;
+  display: inline-block;
+  color: $color;
+  background-color: $bgcolor;
+  font-family: $bd;
+  font-size: $size;
+  text-transform: uppercase;
+  padding: $size / 2;
+  transition: all 0.54s;
+  &:hover {
+    background-color: $color;
+    color: $bgcolor;
+  }
+}
